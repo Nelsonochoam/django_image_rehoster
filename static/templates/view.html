@@ -10,7 +10,18 @@
 			
 			document.getElementById('light').style.display='block';
 			document.getElementById('fade').style.display='block';
-			document.getElementById('normal').src ="{{STATIC_URL}}/"+_alt;
+
+			{%for im in ImgList%}
+
+				if("{{im.title}}" == _alt)
+				{
+					document.getElementById('normal').src ="{{STATIC_URL}}/{{im.title}}";
+					document.getElementById('imtit').innerHTML = "{{im.title}}";
+					document.getElementById('imdate').innerHTML = "{{im.timestamp}}";
+					document.getElementById('imdesc').innerHTML = "{{im.desc}}";
+				}
+
+			{%endfor%}
 
 		}
 
@@ -21,6 +32,7 @@
 			document.getElementById('fade').style.display='none';
 			
 		}
+
 
 	</script>
 </head>
@@ -96,18 +108,17 @@
      <input class= "button" type = "Submit" value = "Close" onclick ="unpop()">
 
 
-     
-
         <div id = "popHeader">
 
-
+        	<p id ="imtit"></p>
+        	<p id = "imdate"></p>
         	
 
      	</div>
      	<div id = "popImage">
 
      		<span id ="imgNormal">
-     			<img id="normal" alt ="" src ="">
+     			<img id="normal" alt =" " src ="">
      		</span>
      			
 
@@ -115,7 +126,7 @@
      	</div>
      	<div id = "popDesc">
 
-
+     		<p id = "imdesc"></p>
 
      	</div>
 
