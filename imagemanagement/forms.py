@@ -1,7 +1,7 @@
 
 from django import forms
 from .models import Photo
-from .utils import checkValidUrl
+
 
 class PhotoForm(forms.Form):
 
@@ -28,7 +28,7 @@ class PhotoForm(forms.Form):
 															  'placeholder':'Image Description'}))
 
 
-	def clean_url(self):
+	'''def clean_url(self):
 
 		cd = self.cleaned_data
 		url = cd.get('url')
@@ -38,7 +38,7 @@ class PhotoForm(forms.Form):
 
 			raise forms.ValidationError('The Url provided must be from an Image ')
 		
-		return url
+		return url'''
 
 		
 

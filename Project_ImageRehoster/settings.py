@@ -84,12 +84,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 #View Templates location
-TEMPLATE_DIRS = (os.path.join("static","templates"),)
+TEMPLATE_DIRS = (os.path.join(BASE_DIR,"static","templates"),)
 
 STATICFILES_DIRS = (
-    os.path.join("static","css"),
-    os.path.join("media","images"), 
-    os.path.join("media","thumbnails"), 
+    os.path.join(BASE_DIR,"static","css"),
+    os.path.join(BASE_DIR,"media","images"), 
+    os.path.join(BASE_DIR,"media","thumbnails"), 
    )
 
 

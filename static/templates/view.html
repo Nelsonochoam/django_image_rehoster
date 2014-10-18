@@ -16,9 +16,11 @@
 				if("{{im.title}}" == _alt)
 				{
 					document.getElementById('normal').src ="{{STATIC_URL}}/{{im.title}}";
-					document.getElementById('imtit').innerHTML = "{{im.title}}";
-					document.getElementById('imdate').innerHTML = "{{im.timestamp}}";
-					document.getElementById('imdesc').innerHTML = "{{im.desc}}";
+					var t = "{{im.title}}".charAt(0).toUpperCase()+"{{im.title}}".slice(1);
+					t = t.split(".")[0];
+					document.getElementById('imtit').innerHTML = "Title: "+t;
+					document.getElementById('imdate').innerHTML = "Date Uploaded: "+"{{im.timestamp}}";
+					document.getElementById('imdesc').innerHTML = "Description: "+"{{im.desc}}";
 				}
 
 			{%endfor%}
@@ -105,14 +107,11 @@
 
 	<div id="light" class="white_content">
 
-     <input class= "button" type = "Submit" value = "Close" onclick ="unpop()">
-
 
         <div id = "popHeader">
 
-        	<p id ="imtit"></p>
-        	<p id = "imdate"></p>
-        	
+        	<span class = "popHeaderItem"<p id ="imtit"></p></span>
+        	<span class ="popHeaderItem"<p id = "imdate"></p>
 
      	</div>
      	<div id = "popImage">
@@ -130,6 +129,7 @@
 
      	</div>
 
+     	  <input class= "button" type = "Submit" value = "Close" onclick ="unpop()">
 
  	</div>
 

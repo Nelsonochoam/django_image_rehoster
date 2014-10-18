@@ -151,12 +151,13 @@ form{
 	top: 25%;
 	left: 25%;
 	width: 600px;
-	height: 600px;
+	height: auto;
 	padding: 16px;
 	border: 5px solid #207cca;
 	background-color: white;
 	z-index:1002;
-	overflow: auto;
+	border-radius: 50px;
+	/*overflow: auto;*/
 }
 
 
@@ -188,7 +189,7 @@ form{
 
 	display: inline-block;
     width: 500px;
-    height: 500px;
+    height: 400px;
     position: relative;
 
 }
@@ -198,13 +199,32 @@ form{
 
 
 	max-width:500px;
-    max-height:500px;
+    max-height:400px;
     width:auto;
     height:auto;
     border: 0;
     position: absolute;
     top: 0; right: 0; bottom: 0; left: 0;
     margin: auto;
+
+}
+
+
+.popHeaderItem{
+
+	width: 100%;
+	float: left;
+	margin-top: .3em;
+}
+
+#popDesc{
+
+	width: 95%;
+	margin-left: 2.5%;
+	margin-right: auto;
+	text-align: left;
+	float: left;
+	overflow: auto;
 
 }
 
