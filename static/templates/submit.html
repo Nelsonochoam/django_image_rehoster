@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+ <html>
+<head>
+	<title>Rehoster</title>
+	<link rel = "stylesheet" type = "text/css" href ="{{STATIC_URL}}/submit.css">
+</head>
+<body>
+
+
+	<div id = "content">
+
+
+		<div id = "nav"> 
+
+			<ul>
+
+				<li><a class="sel" href=" ">Rehoster</a></li>
+				<li><a href="/view/">Images</a></li>
+
+			</ul>
+
+		</div>
+
+
+		<div id = "container"> 
+
+			<div id = "saveImage"> 
+
+				<form method="POST" action=""> {% csrf_token %}
+
+					{{form.as_p}}
+					<input class = "button" type="submit" value = "Rehost Image">
+
+			    </form>	
+
+
+			</div>
+
+		</div>
+
+
+	</dic>
+
+
+
+
+
+	<!--<div id = "content">
+
+
+		<div id = "nav"> 
+
+			<ul>
+
+				<li><a href=" ">Image Rehoster</a></li>
+				<li><a href="/view/">View Images</a></li>
+
+			</ul>
+
+		</div>
+
+		<div id = "saveImage"> 
+
+			<h1>Image Rehoster</h1>
+
+			<form method="POST" action=""> {% csrf_token %}
+
+				{{form.as_p}}
+				<input type="submit" value = "Rehost Image">
+
+			</form>	
+			{{status}}
+			
+			{%if form.errors %}
+
+				<h3> Your form has errors please correct them</h3>
+
+			{%endif%}
+
+		</div>
+
+	</div> -->
+	
+</body> 
+</html>

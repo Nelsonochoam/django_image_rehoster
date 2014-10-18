@@ -1,0 +1,146 @@
+<!<!DOCTYPE html>
+<html>
+<head>
+	<title>Images</title>
+	<link rel = "stylesheet" type = "text/css" href ="{{STATIC_URL}}/view.css">
+	<script type="text/javascript">
+
+		var pop = function(_alt){
+
+			
+			document.getElementById('light').style.display='block';
+			document.getElementById('fade').style.display='block';
+			document.getElementById('normal').src ="{{STATIC_URL}}/"+_alt;
+
+		}
+
+
+		var unpop = function(){
+
+			document.getElementById('light').style.display='none';
+			document.getElementById('fade').style.display='none';
+			
+		}
+
+	</script>
+</head>
+<body>
+
+	<div id = "content">
+
+		<div id = "nav"> 
+
+			<ul>
+
+				<li><a href="/">Rehoster</a></li>
+				<li><a href="/view/">Images</a></li>
+
+			</ul>
+
+		</div>
+
+		<div id = "search">
+
+			<div id = "bar">
+
+				<form method = "POST" action =" "> {% csrf_token %}
+
+					<input class = "search" type = "textfield" placeholder ="Search.." name ="im_id"></input>
+					<input class= "button" type = "Submit" value = "Search">
+
+				</form>
+
+			</div>
+
+		</div>
+
+		<div id ="display">
+
+
+				
+
+				<table id = "frame" >
+		
+					<tr>
+					{%for img in ImgList%}
+
+		
+						<td ><div  class="container">
+
+
+								<span id = "imgThumb">
+								<img class = "inner" onclick="pop(this.alt)" alt ="{{img.title}}"  src ="{{STATIC_URL}}/thumb-{{img.title}}"></img></span>
+
+						</div></td>
+
+						{% if forloop.counter|divisibleby:4 %}
+					</tr>
+					<tr>
+						{%endif%}
+
+					{%endfor%}
+					</tr>
+
+
+				</table>
+
+			
+		</div>	
+
+		<!-- end display -->
+
+		<!--Floating Pop div -->
+
+	<div id="light" class="white_content">
+
+     <input class= "button" type = "Submit" value = "Close" onclick ="unpop()">
+
+
+     
+
+        <div id = "popHeader">
+
+
+        	
+
+     	</div>
+     	<div id = "popImage">
+
+     		<span id ="imgNormal">
+     			<img id="normal" alt ="" src ="">
+     		</span>
+     			
+
+
+     	</div>
+     	<div id = "popDesc">
+
+
+
+     	</div>
+
+
+ 	</div>
+
+    <div id="fade" class="black_overlay"></div>
+    
+    <!-- end floating Pop div -->
+
+	</div>
+
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
