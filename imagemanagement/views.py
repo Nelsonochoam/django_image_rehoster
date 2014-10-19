@@ -3,6 +3,7 @@ from .forms import PhotoForm
 from PIL import Image
 from .models import Photo
 from .utils import *
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 # missing to validate that the same image doesnt exist2 nor in the folder or server
@@ -61,9 +62,22 @@ def showImages(request):
 
 		image_list = Photo.objects.all()
 
+	#Pagination Feature
+	paginator = Paginator(image_list,20)  #Number of items per page
+	page_num = request.GET.get("page",1)
+
+	try:
+		page = paginator.page(page_num)
+	except EmptyPage:
+		page = paginator.page(paginator.num_pages)
+	except PageNotAnInteger:
+		page = paginator.page(1)
+
+
+		
 
 	
-	return render(request, "view.html",{"ImgList":image_list, "Msg":message})
+	return render(request, "view.html",{"ImgList":image_list, "Msg":message, "page":page})
 
 
 

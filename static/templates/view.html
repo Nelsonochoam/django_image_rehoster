@@ -76,7 +76,7 @@
 				<table id = "frame" >
 		
 					<tr>
-					{%for img in ImgList%}
+					{%for img in page.object_list%}
 
 		
 						<td ><div  class="container">
@@ -104,10 +104,35 @@
 
 				{% endif %}
 
+
+
+
+				<!-- Pagination -->
+		<div id = "pagIndex">
+
+				{% if page.has_previous %}
+					  <input class= "button" type = "Submit" value = "Previous" onclick ="window.location='?page={{page.previous_page_number}}'">
+				{%endif%}
+
+				<span id ="pag"> {{page.number}} </span>
+
+				{% if page.has_next %}
+						<input class= "button" type = "Submit" value = "Next" onclick ="window.location='?page={{page.next_page_number}}'">
+				{%endif%}
+
+
+		</div>
+		<!-- Pagination -->
+
+
+
+
+
 			
 		</div>	
 
 		<!-- end display -->
+
 
 		<!--Floating Pop div -->
 
