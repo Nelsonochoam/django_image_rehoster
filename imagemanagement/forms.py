@@ -8,7 +8,7 @@ class PhotoForm(forms.Form):
 	title = forms.CharField(max_length=100,
 							label = '',
 							required=True,
-							error_messages = {'required':'Please specify a Title for your image *'},
+							error_messages = {'required':'Please specify a title for your image *'},
 							widget = forms.TextInput(attrs = {'class': 'search',
 															  'placeholder':'Image title (Requiered)'}))
 							

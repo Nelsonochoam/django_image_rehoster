@@ -43,23 +43,13 @@ class imgProcesor(object):
 
 		else:
 
-			return "Image URL invalid please submit one that belongs to an image"
+			return "Image URL invalid please submit one that belongs to an image *"
 		 	
 
 	def saveInServer(self):
 
-		finaltitle = []
 
-		for char in self.title:
-
-			if char == " ":
-				finaltitle.append('_')
-			else:
-				finaltitle.append(char)
-
-		finaltitle.append("."+self.image.format.lower())
-
-		self.image.save(self.IMAGE_DIR +'/'+"".join(finaltitle),self.image.format)
+		self.image.save(self.IMAGE_DIR +'/'+self.changeSpc(self.title)+"."+self.image.format.lower(),self.image.format)
 
 		#generate a thumbnail for the image
 		self.makeThumb()
@@ -97,7 +87,7 @@ class imgProcesor(object):
 
 	
 		thumb.thumbnail((200,200),Image.ANTIALIAS)
-		thumb.save(self.THUMB_DIR+'/thumb-'+self.title+"."+self.image.format.lower(),self.image.format)
+		thumb.save(self.THUMB_DIR+'/thumb-'+self.changeSpc(self.title)+"."+self.image.format.lower(),self.image.format)
 
 
 
@@ -138,6 +128,23 @@ class imgProcesor(object):
 		else:
 
 			return False
+
+
+
+	def changeSpc(self,strg):
+
+		li = []
+
+		for char in strg:
+
+			if char == " ":
+				li.append('_')
+			else:
+				li.append(char)
+
+		return "".join(strg)
+
+
 
 
 
