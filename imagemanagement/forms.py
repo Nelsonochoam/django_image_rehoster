@@ -10,14 +10,15 @@ class PhotoForm(forms.Form):
 							required=True,
 							error_messages = {'required':'Please specify a Title for your image'},
 							widget = forms.TextInput(attrs = {'class': 'search',
-															  'placeholder':'Image Title'}))
+															  'placeholder':'Image Title (Requiered)'}))
 							
 
 	url = forms.URLField(label='',
 						  max_length=200,
 						  required=True,
+						  error_messages = {'required':'Please specify the url of the image'},
 						  widget = forms.TextInput(attrs = {'class': 'search',
-															  'placeholder':'Image URL'}))
+															  'placeholder':'Image URL (Requiered)'}))
 
 
 
@@ -25,20 +26,9 @@ class PhotoForm(forms.Form):
 						    max_length=100, 
 						    required=False,
 						    widget = forms.TextInput(attrs = {'class': 'search',
-															  'placeholder':'Image Description'}))
+															  'placeholder':'Image Description (Optional)'}))
 
 
-	'''def clean_url(self):
-
-		cd = self.cleaned_data
-		url = cd.get('url')
-
-		#if not a valid url
-		if not checkValidUrl(url):
-
-			raise forms.ValidationError('The Url provided must be from an Image ')
-		
-		return url'''
 
 		
 

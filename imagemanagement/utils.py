@@ -16,6 +16,7 @@ class imgProcesor(object):
 	THUMB_DIR = os.path.join("media","thumbnails") 
 
 
+
 	def __init__(self,url,title, desc):
 
 		self.url = url
