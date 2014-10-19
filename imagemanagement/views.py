@@ -43,6 +43,8 @@ def saveimage(request):
 
 def showImages(request):
 
+	message = None;
+
 	if 'im_id' in request.POST:
 
 		image_id = request.POST['im_id']
@@ -51,14 +53,17 @@ def showImages(request):
 
 		image_list = Photo.objects.filter(title__contains = title)
 
+		if not image_list:
+
+			message = "Your search returned no results"
 
 	else:
 
-
 		image_list = Photo.objects.all()
 
+
 	
-	return render(request, "view.html",{"ImgList":image_list})
+	return render(request, "view.html",{"ImgList":image_list, "Msg":message})
 
 
 

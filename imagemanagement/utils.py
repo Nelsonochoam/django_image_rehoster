@@ -22,11 +22,12 @@ class imgProcesor(object):
 		self.url = url
 		self.title = title.lower()
 		self.desc = desc
-		self.request = requests.get(url)
 		try:
+			self.request = requests.get(url)
 			self.image = Image.open(StringIO(self.request.content))
 		except:
 			self.image = None
+			self.request = None
 			
 
 
@@ -36,7 +37,7 @@ class imgProcesor(object):
 
 		if self.checkValidUrl():
 
-			self.saveInServer()  #validate if image saved in server then store in DB
+			self.saveInServer()  
 			self.saveInDB()
 
 			return "The image "+self.title+" was successfully rehosted"
@@ -66,16 +67,21 @@ class imgProcesor(object):
 
 	def checkValidUrl(self):
 
-		if self.request.status_code == requests.codes.ok:
-		
-			if self.request.headers.get('Content-Type').split('/')[0] == 'image':
+		if self.request == None :
+
+			return False
+
+		else:
+
+			if self.request.status_code == requests.codes.ok and self.request.headers.get('Content-Type').split('/')[0] == 'image':
 
 				return True
 
-		return False
+			else:
 
+				return False
 
-
+	
 
 	def makeThumb(self):
 

@@ -1,6 +1,6 @@
 
 from django import forms
-from .models import Photo
+
 
 
 class PhotoForm(forms.Form):
@@ -27,6 +27,12 @@ class PhotoForm(forms.Form):
 						    required=False,
 						    widget = forms.TextInput(attrs = {'class': 'search',
 															  'placeholder':'Image Description (Optional)'}))
+
+	#pcfile = forms.FileFIeld(widget = forms.FIleInput())
+
+
+
+
 
 
 
