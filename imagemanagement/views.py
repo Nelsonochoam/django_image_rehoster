@@ -6,11 +6,7 @@ from .utils import *
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
-# missing to validate that the same image doesnt exist2 nor in the folder or server
 
-
-# Create your views here.
-#Considering the main page is submit  SOME VALIDATION ERRORS
 def saveimage(request):
 	#If a post was submited from the submit.html
 	#Photo.objects.all().delete()
@@ -74,7 +70,6 @@ def showImages(request):
 		page = paginator.page(1)
 
 
-		
 
 	
 	return render(request, "view.html",{"ImgList":image_list, "Msg":message, "page":page})
