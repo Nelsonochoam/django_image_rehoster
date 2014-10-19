@@ -1,4 +1,4 @@
-<!<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Images</title>
@@ -16,11 +16,15 @@
 				if("{{im.title}}" == _alt)
 				{
 					document.getElementById('normal').src ="{{STATIC_URL}}/{{im.title}}";
+					document.getElementById('normal').onclick = function () {
+
+						window.location = "{{im.url}}"
+					}
 					var t = "{{im.title}}".charAt(0).toUpperCase()+"{{im.title}}".slice(1);
 					t = t.split(".")[0];
-					document.getElementById('imtit').innerHTML = "Title: "+t;
-					document.getElementById('imdate').innerHTML = "Date Uploaded: "+"{{im.timestamp}}";
-					document.getElementById('imdesc').innerHTML = "Description: "+"{{im.desc}}";
+					document.getElementById('imtit').innerHTML = t;
+					document.getElementById('imdate').innerHTML = "{{im.timestamp}}";
+					document.getElementById('imdesc').innerHTML = "Description : {{im.desc}}";
 				}
 
 			{%endfor%}
@@ -141,26 +145,26 @@
 
         <div id = "popHeader">
 
-        	<span class = "popHeaderItem"<p id ="imtit"></p></span>
-        	<span class ="popHeaderItem"<p id = "imdate"></p>
+        	<span class = "popHeaderItem">
+        		<h3 id ="imtit" style="margin:0;"></h3>
+        		<span id = "imdate"></span>
+        	</span>
+
 
      	</div>
      	<div id = "popImage">
 
      		<span id ="imgNormal">
-     			<img id="normal" alt =" " src ="">
+     			<img  id="normal" alt =" " src ="">
      		</span>
-     			
-
 
      	</div>
+     	 <input class= "button2" type = "Submit" value = "Close" onclick ="unpop()">
      	<div id = "popDesc">
 
      		<p id = "imdesc"></p>
 
      	</div>
-
-     	  <input class= "button" type = "Submit" value = "Close" onclick ="unpop()">
 
  	</div>
 

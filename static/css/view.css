@@ -92,6 +92,17 @@ form{
                 color:#207cca;
 }
 
+.button2 {
+                position:relative;
+                padding:6px 15px;
+                left:-8px;
+                border-top:2px solid #207cca;
+                border-left:2px solid #207cca;
+                border-right:2px solid #207cca;
+                background-color:#fafafa;
+                color:#207cca;
+                cursor:pointer;
+}
 
 #bar{
 	margin: 0 auto;
@@ -153,11 +164,9 @@ form{
 	left: 25%;
 	width: 600px;
 	height: auto;
-	padding: 16px;
 	border: 5px solid #207cca;
 	background-color: white;
 	z-index:1002;
-	border-radius: 50px;
 
 }
 
@@ -205,6 +214,7 @@ form{
 
 	max-width:500px;
     max-height:400px;
+    cursor:pointer;
     width:auto;
     height:auto;
     border: 0;
@@ -216,18 +226,33 @@ form{
 
 
 .popHeaderItem{
+	
+	color: #FFFFFF;
+}
+
+#popHeader{
 
 	width: 100%;
-	float: left;
-	margin-top: .3em;
+	-webkit-box-shadow: 0px 5px 3px 0px rgba(50, 50, 50, 0.45);
+	-moz-box-shadow:    0px 5px 3px 0px rgba(50, 50, 50, 0.45);
+	box-shadow:         0px 5px 3px 0px rgba(50, 50, 50, 0.45);
+	height: auto;
+	float: left;	
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background-color: #207cca;
 }
 
 #popDesc{
 
-	width: 95%;
-	margin-left: 2.5%;
+	background-color: #207cca;
+	width: 100%;
+	-webkit-box-shadow: 0px -5px 3px 0px rgba(50, 50, 50, 0.45);
+	-moz-box-shadow:    0px -5px 3px 0px rgba(50, 50, 50, 0.45);
+	box-shadow:         0px -5px 3px 0px rgba(50, 50, 50, 0.45);
 	margin-right: auto;
 	text-align: left;
+	color: #FFFFFF;
 	float: left;
 	overflow: auto;
 
@@ -241,7 +266,10 @@ form{
 
 }
 
+#imdesc{
 
+	margin-left: 10px;
+}
 
 
 #pagIndex{

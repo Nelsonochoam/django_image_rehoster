@@ -27,9 +27,6 @@ class PhotoForm(forms.Form):
 		widget = forms.TextInput(attrs = {'class': 'search','placeholder':'Image Description (Optional)'}))
 
 	
-		#pcfile = forms.FileFIeld(widget = forms.FIleInput())
-
-
 
 
 

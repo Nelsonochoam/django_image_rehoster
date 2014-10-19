@@ -88,8 +88,8 @@ TEMPLATE_DIRS = (os.path.join(BASE_DIR,"static","templates"),)
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR,"static","css"),
-    os.path.join(BASE_DIR,"media","images"), 
-    os.path.join(BASE_DIR,"media","thumbnails"), 
+    os.path.join(BASE_DIR,"static","media","images"), 
+    os.path.join(BASE_DIR,"static","media","thumbnails"), 
    )
 
 

@@ -185,19 +185,12 @@ class imgProcesor(object):
 	def changeSpc(self,strg):
 		'''Returns a string
 
-		Replaces spaces by _ of a string
+		Replaces spaces and . by _ of a string
 		'''
+		li = str(strg).replace(' ','_')
+		li.replace('.','_')
 
-		li = []
-
-		for char in strg:
-
-			if char == " ":
-				li.append('_')
-			else:
-				li.append(char)
-
-		return "".join(strg)
+		return li
 
 
 
