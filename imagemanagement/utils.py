@@ -23,7 +23,11 @@ class imgProcesor(object):
 		self.title = title.lower()
 		self.desc = desc
 		self.request = requests.get(url)
-		self.image = Image.open(StringIO(self.request.content))
+		try:
+			self.image = Image.open(StringIO(self.request.content))
+		except:
+			self.image = None
+			
 
 
 
@@ -34,9 +38,13 @@ class imgProcesor(object):
 
 			self.saveInServer()  #validate if image saved in server then store in DB
 			self.saveInDB()
-		 	print >> sys.stderr, "Image confirmed"
 
+			return "The image "+self.title+" was successfully rehosted"
 
+		else:
+
+			return "Image URL invalid please submit one that belongs to an image"
+		 	
 
 	def saveInServer(self):
 
@@ -74,7 +82,6 @@ class imgProcesor(object):
 
 				return True
 
-		print >> sys.stderr, "Error confirming image"
 		return False
 
 

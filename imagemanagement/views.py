@@ -22,16 +22,16 @@ def saveimage(request):
 			cd = form.cleaned_data
 
 
-			#statusmsg =  downLoadImage(cd['url'],cd['title'],cd['desc'])
+			
 			process = imgProcesor(cd['url'],cd['title'],cd['desc'])
-			process.downLoadImage()
+			msg = process.downLoadImage()
 
 
 
 			form = PhotoForm()
-			return render(request,"submit.html",{'form':form})# Hide the text after it shows
+			return render(request,"submit.html",{'form':form,'Msg':msg})# Hide the text after it shows
 
-		else: # Form has errors
+		else: 
 			return render(request,"submit.html",{'form':form})
 
 	form = PhotoForm()

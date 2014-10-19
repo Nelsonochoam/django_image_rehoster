@@ -8,15 +8,15 @@ class PhotoForm(forms.Form):
 	title = forms.CharField(max_length=100,
 							label = '',
 							required=True,
-							error_messages = {'required':'Please specify a Title for your image'},
+							error_messages = {'required':'Please specify a Title for your image *'},
 							widget = forms.TextInput(attrs = {'class': 'search',
-															  'placeholder':'Image Title (Requiered)'}))
+															  'placeholder':'Image title (Requiered)'}))
 							
 
 	url = forms.URLField(label='',
 						  max_length=200,
 						  required=True,
-						  error_messages = {'required':'Please specify the url of the image'},
+						  error_messages = {'required':'Please specify the url of the image *'},
 						  widget = forms.TextInput(attrs = {'class': 'search',
 															  'placeholder':'Image URL (Requiered)'}))
 

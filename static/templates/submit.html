@@ -3,6 +3,13 @@
 <head>
 	<title>Rehoster</title>
 	<link rel = "stylesheet" type = "text/css" href ="{{STATIC_URL}}/submit.css">
+	<script type="text/javascript">
+
+
+
+
+
+	</script>
 </head>
 <body>
 
@@ -26,29 +33,40 @@
 
 			<div id = "saveImage"> 
 
-				<form method="POST" action=""> {% csrf_token %}
+				<form method="POST" action="" id="sub"> {% csrf_token %}
 
 					<table>
-
+						<tr class = "errorMsg">
+							<td>{{form.title.errors| striptags}}</td>
+						</tr>
 						<tr>
 							<td>{{form.title}}</td>
-							<td>{{form.title.errors}}</td>
+						</tr>
+						<tr class = "errorMsg">
+							<td>{{form.url.errors| striptags}}</td>
 						</tr>
 						<tr>
 							<td>{{form.url}}</td>
-							<td>{{form.url.errors}}</td>
+						</tr>
+						<tr class = "errorMsg">
+							<td>{{form.desc.errors| striptags}}</td>
 						</tr>
 						<tr>
 							<td>{{form.desc}}</td>
-							<td>{{form.desc.errors}}</td>
+						</tr>
+						<tr>
+							<td><input class = "button" type="submit" value = "Rehost Image"></td>
 						</tr>
 
-					<table>
-
-
-					<input class = "button" type="submit" value = "Rehost Image">
+					</table>
 
 			    </form>	
+
+			    {% if Msg %}
+
+			    <span class = "errorMsg"><p>{{Msg}}</p></span>
+
+			    {%endif%}
 
 
 			</div>
