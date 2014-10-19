@@ -8,7 +8,10 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 def saveimage(request):
-	#If a post was submited from the submit.html
+	'''
+	Method called when the submit view is loaded  takes the data from the photo form and
+	downloads and saves the image into the server
+	'''
 	#Photo.objects.all().delete()
 	if request.method == "POST":
 
@@ -20,7 +23,9 @@ def saveimage(request):
 
 
 			
-			process = imgProcesor(cd['url'],cd['title'],cd['desc'])
+			process = imgProcesor(cd['url'],cd['title'],
+								  cd['desc'])
+
 			msg = process.downLoadImage()
 
 
@@ -29,6 +34,7 @@ def saveimage(request):
 			return render(request,"submit.html",{'form':form,'Msg':msg})# Hide the text after it shows
 
 		else: 
+
 			return render(request,"submit.html",{'form':form})
 
 	form = PhotoForm()
@@ -38,7 +44,11 @@ def saveimage(request):
 
 
 
-def showImages(request):
+def showimages(request):
+	'''
+	Method for displaying and searching the images stored on server
+	includes pagination
+	'''
 
 	message = None;
 
@@ -72,7 +82,8 @@ def showImages(request):
 
 
 	
-	return render(request, "view.html",{"ImgList":image_list, "Msg":message, "page":page})
+	return render(request, "view.html",{"ImgList":image_list,
+				 "Msg":message, "page":page})
 
 
 
