@@ -184,6 +184,12 @@ form{
     cursor:pointer;
 }
 
+
+.inner:hover{
+
+	border:4px solid #207cca;
+}
+
 #imgNormal{
 
 	display: inline-block;
