@@ -28,7 +28,6 @@ body{
 		#FFFFFF 0%, #00A3EF 100%);
 	background-repeat: no-repeat;
     background-attachment: fixed;
-	text-align: center;
 }
 
 
@@ -66,7 +65,7 @@ body{
 	background-color:#207cca;
     color:#fafafa;
     border:2px solid #207cca;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 13px;
 
 }
@@ -79,12 +78,14 @@ color:#207cca;
 }
 
 .button {
-                padding:10px 20px;
+                padding:9px 20px;
                 width: 230px;
                 cursor:pointer;
                 border:2px solid #207cca;
                 background-color:#207cca;
                 color:#fafafa;
+                font-size: 13px;
+                font-family: 'Open Sans', sans-serif;
 }
 .button:hover  {
                 background-color:#fafafa;
@@ -97,14 +98,12 @@ color:#207cca;
 	float: left;
 	height: auto;
 	width: 100%;
-	text-align: center;
 
 }
 
 .search {
      padding:13px 15px;
      background-color: white;
-     opacity: 0.8;
      border:0px solid #dbdbdb;
      width: 200px;
 }
@@ -112,7 +111,8 @@ color:#207cca;
 
 #saveImage
 {
-	margin: 0 auto;
+	/*margin: 0 auto;*/
+	margin-left:36%;
 	width: fit-content;
 	width: -moz-fit-content;
     width: -webkit-fit-content;
@@ -122,14 +122,20 @@ color:#207cca;
 
 .errorMsg{
 
-	color:#207cca;
-	font-family: Arial, Helvetica, sans-serif ;
+	color:#3366FF;
+	font-family: 'Open Sans', sans-serif;
 }
 
 #message{
 
 	margin-top: 2em;
 
+}
+
+.text{
+
+	color:#3366FF;
+	font-family: 'Open Sans', sans-serif;
 }
 
 

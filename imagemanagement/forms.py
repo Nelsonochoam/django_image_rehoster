@@ -26,7 +26,7 @@ class PhotoForm(forms.Form):
 		required=False, 
 		widget = forms.TextInput(attrs = {'class': 'search','placeholder':'Image Description (Optional)'}))
 
-	
+
 
 
 

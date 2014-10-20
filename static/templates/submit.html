@@ -3,12 +3,8 @@
 <head>
 	<title>Rehoster</title>
 	<link rel = "stylesheet" type = "text/css" href ="{{STATIC_URL}}/submit.css">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
 	<script type="text/javascript">
-
-
-
-
-
 	</script>
 </head>
 <body>
@@ -36,28 +32,24 @@
 				<form method="POST" action="" id="sub"> {% csrf_token %}
 
 					<table>
-						<tr class = "errorMsg">
-							<td>{{form.title.errors| striptags}}</td>
-						</tr>
 						<tr>
 							<td>{{form.title}}</td>
-						</tr>
-						<tr class = "errorMsg">
-							<td>{{form.url.errors| striptags}}</td>
+							<td><span class="errorMsg">{{form.title.errors| striptags}}</span></td>
 						</tr>
 						<tr>
 							<td>{{form.url}}</td>
-						</tr>
-						<tr class = "errorMsg">
-							<td>{{form.desc.errors| striptags}}</td>
+							<td><span class="errorMsg">{{form.url.errors| striptags}}</span></td>
 						</tr>
 						<tr>
 							<td>{{form.desc}}</td>
+							<td><span class="errorMsg">{{form.desc.errors| striptags}}</span></td>
+						</tr>
+						<tr>
+							<td style="display:none;">{{form.pcim}}</td>
 						</tr>
 						<tr>
 							<td><input class = "button" type="submit" value = "Rehost Image"></td>
 						</tr>
-
 					</table>
 
 			    </form>	
@@ -67,7 +59,7 @@
 			
 			    {% if Msg %}
 
-			    <span id="message" ><p class = "errorMsg">{{Msg}}</p></span>
+			    <span id="message" style="text-align:center;" ><p class = "errorMsg">{{Msg}}</p></span>
 
 			    {%endif%}
 
@@ -75,10 +67,6 @@
 
 
 	</dic>
-
-
-
-
 
 	
 </body> 
