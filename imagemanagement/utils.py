@@ -15,8 +15,8 @@ class imgProcesor(object):
 	'''
 
 	BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-	IMAGE_DIR = os.path.join("media","images")
-	THUMB_DIR = os.path.join("media","thumbnails") 
+	IMAGE_DIR = os.path.join("static","media","images")
+	THUMB_DIR = os.path.join("static","media","thumbnails") 
 
 
 

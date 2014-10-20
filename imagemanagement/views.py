@@ -69,7 +69,7 @@ def showimages(request):
 		image_list = Photo.objects.all()
 
 	#Pagination Feature
-	paginator = Paginator(image_list,20)  #Number of items per page
+	paginator = Paginator(image_list,4)  #Number of items per page
 	page_num = request.GET.get("page",1)
 
 	try:
