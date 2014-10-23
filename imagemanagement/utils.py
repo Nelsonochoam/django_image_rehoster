@@ -78,7 +78,7 @@ class imgProcesor(object):
 		the DB.
 		'''
 
-		p = Photo(url=self.url, title = self.title +"."+
+		p = Photo(url=self.url, title = self.changeSpc(self.title)+"."+
 		 self.image.format.lower(), desc= self.desc)
 
 		p.save()

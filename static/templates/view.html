@@ -23,6 +23,7 @@
 					}
 					var t = "{{im.title}}".charAt(0).toUpperCase()+"{{im.title}}".slice(1);
 					t = t.split(".")[0];
+					t = t.replace(/_/g," ")
 					document.getElementById('imtit').innerHTML = t;
 					document.getElementById('imdate').innerHTML = "{{im.timestamp}}";
 					document.getElementById('imdesc').innerHTML = "Description : {{im.desc}}";
