@@ -12,7 +12,7 @@ def saveimage(request):
 	Method called when the submit view is loaded  takes the data from the photo form and
 	downloads and saves the image into the server
 	'''
-	Photo.objects.all().delete()
+	#Photo.objects.all().delete()
 	if request.method == "POST":
 
 		form = PhotoForm(request.POST)
