@@ -61,12 +61,13 @@ def showimages(request):
 		image_list = Photo.objects.filter(title__contains = title)
 
 		if not image_list:
-
 			message = "Your search returned no results"
 
 	else:
 
 		image_list = Photo.objects.all()
+		if not image_list:
+			message = "There are no pictures in the server"
 
 	#Pagination Feature
 	paginator = Paginator(image_list,4)  #Number of items per page
